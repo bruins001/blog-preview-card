@@ -6,20 +6,49 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     --color-gray-500: #6B6B6B;
     --color-gray-950: #111111;
     --color-yellow: #F4D04E;
     --font-size-2: 1rem;
     --font-size-3: 0.875rem;
+    --spacing-50: 0.5rem;
+    --spacing-150: 0.75rem;
+    --spacing-200: 1.5rem;
 
     background-color: var(--color-yellow);
+    margin: 0; /* So the page doesn't scroll */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    padding: var(--spacing-200);
+    border-radius: 1.25rem;
+    max-width: 24rem;
+
+    border: 1px solid var(--color-gray-950);
+    box-shadow: 8px 8px 0 0 #000;
 }
 
 button {
+    margin: 0; /* To prevent duplicate margin with article */
     font-weight: 800; /* Extra bold/Ultra bold */
+
+    border: none;
+    background-color: var(--color-yellow);
+    padding: var(--spacing-50) var(--spacing-150);
 }
 
+/* Title */
 h1 {
     color: var(--color-gray-950);
 
@@ -27,8 +56,17 @@ h1 {
     font-size: var(1.5rem);
     font-weight: 800; /* Extra bold/Ultra bold */
     line-height: 150%;
+
+    max-width: fit-content;
 }
 
+h1:hover {
+    color: var(--color-yellow);
+    cursor: pointer;
+    transition: 0.08s ease-out;
+}
+
+/* Author name */
 h2 {
     color: var(--color-gray-950);
 
@@ -36,9 +74,25 @@ h2 {
     font-size: var(--font-size-3);
     font-weight: 800; /* Extra bold/Ultra bold */
     line-height: 150%;
+
+    /* Image gets crushed else IDK why */
+    margin-top: auto;
+    margin-bottom: auto;
+
+    margin-left: 0.5rem;
+}
+
+article {
+    margin-top: var(--spacing-200);
+    margin-bottom: var(--spacing-200);
 }
 
 /* Id's */
+
+#banner {
+    width: 100%;
+    border-radius: 0.625rem;
+}
 
 #publishing-date {
     font-weight: 500; /* Medium */
@@ -53,6 +107,10 @@ h2 {
     line-height: 150%;
 }
 
+#author {
+    display: flex;
+}
+
 /* Combinations */
 
 button,
@@ -63,9 +121,17 @@ button,
     line-height: 150%;
 }
 
+#author > img {
+    max-width: 2rem;
+}
+
 @media screen and (max-width: 550px) {
     button,
     #publishing-date {
         font-size: 0.75rem;
+    }
+
+    main {
+        max-width: 90%;
     }
 }
