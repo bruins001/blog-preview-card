@@ -46,6 +46,7 @@ button {
     border: none;
     background-color: var(--color-yellow);
     padding: var(--spacing-50) var(--spacing-150);
+    cursor: pointer;
 }
 
 /* Title */
@@ -53,7 +54,7 @@ h1 {
     color: var(--color-gray-950);
 
     font-family: 'Figtree', sans-serif;
-    font-size: var(1.5rem);
+    font-size: 1.5rem;
     font-weight: 800; /* Extra bold/Ultra bold */
     line-height: 150%;
 
